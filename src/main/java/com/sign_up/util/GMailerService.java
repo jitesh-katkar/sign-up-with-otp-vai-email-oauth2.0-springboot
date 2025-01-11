@@ -34,7 +34,7 @@ import jakarta.mail.internet.MimeMessage.RecipientType;
 @Service
 public class GMailerService {
 
-	private static final String TEST_EMAIL = "JAK.Unicorn25@gmail.com";
+	private static final String TEST_EMAIL = "JAK.*******@gmail.com";
 	private final Gmail service;
 
 	public GMailerService() throws Exception {
@@ -47,7 +47,7 @@ public class GMailerService {
 	private static Credential getCredentials(final NetHttpTransport httpTransport, GsonFactory jsonFactory)
 			throws IOException {
 		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(jsonFactory,
-				new InputStreamReader(GMailerService.class.getResourceAsStream("/credentials.json")));
+				new InputStreamReader(GMailerService.class.getResourceAsStream("/***credentials.json")));
 
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(httpTransport, jsonFactory,
 				clientSecrets, Set.of(GMAIL_SEND))
